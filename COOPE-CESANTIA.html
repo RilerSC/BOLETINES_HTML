@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilidades de Cesantía - Coopebanacio</title>
+    <style>
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #F4F4F4;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 0;
+            box-shadow: 0 2px 8px rgba(40, 40, 40, 0.07);
+            overflow: hidden;
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+        .header {
+            background: #fff;
+            padding: 0;
+            text-align: center;
+        }
+        .header img {
+            height: 55px;
+            width: auto;
+            display: inline-block;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .banner {
+            background: #0080FF;
+            border-radius: 50%;
+            width: 320px;
+            height: 120px;
+            margin: 24px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .banner-text {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        .banner-text strong {
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        .banner-sub {
+            color: #fff;
+            font-size: 0.95rem;
+            margin-top: 6px;
+            text-align: center;
+        }
+        .main-title {
+            color: #2F2F77;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 32px 24px 16px 24px;
+        }
+        .desc {
+            color: #333333;
+            font-size: 1rem;
+            text-align: center;
+            margin: 0 24px 12px 24px;
+        }
+        .correo {
+            color: #0080FF;
+            font-weight: 700;
+            font-size: 1.05rem;
+            background: #eaf6ff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .extra {
+            color: #555555;
+            font-size: 0.98rem;
+            text-align: center;
+            margin: 18px 24px 32px 24px;
+        }
+        .footer {
+            background: #0080FF;
+            color: #fff;
+            text-align: center;
+            padding: 24px 16px 16px 16px;
+            font-size: 1rem;
+            font-weight: 400;
+            border-radius: 0 0 12px 12px;
+        }
+        .footer .social {
+            margin-top: 18px;
+        }
+        .footer .icon {
+            display: inline-block;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+        @media (max-width: 650px) {
+            .container {
+                max-width: 98vw;
+            }
+            .banner {
+                width: 90vw;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado con logo -->
+        <div class="header">
+            <img src="./LOGOS/logoCop2.png" alt="Coopebanacio" />
+        </div>
+        <!-- Imagen principal de cesantía -->
+        <div style="width:100%; text-align:center; background:#F4F4F4; margin:0; padding:0;">
+            <div style="position:relative; width:100%; max-width:600px; margin:0 auto;">
+                <img src="./img/cesantia.png" alt="Cesantía Coopebanacio" style="width:100%; max-width:600px; height:auto; display:block; margin:0 auto; border-radius:0;" />
+                <div style="position:absolute; bottom:4%; left:50%; transform:translate(-50%,0); width:92%; text-align:center;">
+                    <div style="color:#fff; font-size:1.25rem; font-weight:700; text-shadow:0 2px 8px rgba(0,0,0,0.18); background:rgba(0,128,255,0.80); border-radius:16px; padding:10px 0 6px 0; margin-bottom:6px; letter-spacing:1px;">
+                        LLEGARON LAS UTILIDADES DE <span style="font-weight:900;">CESANTÍA</span>
+                    </div>
+                    <div style="color:#fff; font-size:1rem; font-weight:500; text-shadow:0 2px 8px rgba(0,0,0,0.18); background:rgba(0,128,255,0.70); border-radius:10px; padding:5px 0;">
+                        ¡CAPITALIZALAS ANTES DEL 17 DE SETIEMBRE!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner eliminado, texto ahora sobre la imagen -->
+        <!-- Sección central -->
+        <div class="main-title">
+            Estimado(a) <span style="color:#2F2F77; font-weight:600;">[Nombre]</span>
+        </div>
+        <div class="desc" style="margin-bottom:18px;">
+            Nos complace informarte que ya se encuentran disponibles tus utilidades de cesantía correspondientes a este año.<br><br>
+            <span style="display:inline-block; background:#2F2F77; color:#fff; font-weight:700; padding:8px 18px; border-radius:8px; font-size:1.1rem; margin-bottom:10px;">El valor asignado para ti es de: <span style="font-size:1.15rem;">$[monto]</span></span>
+        </div>
+        <div class="desc" style="margin-bottom:18px; color:#333;">
+            Tienes la posibilidad de decidir qué hacer con ellos:
+            <ul style="text-align:left; max-width:420px; margin:16px auto 0 auto; color:#385436; font-size:1rem;">
+                <li>Solicitar la <strong>capitalización total</strong> de tus excedentes.</li>
+                <li>Solicitar la <strong>capitalización parcial</strong>, manteniendo una parte disponible.</li>
+            </ul>
+        </div>
+        <div class="desc" style="margin-bottom:24px;">
+            Para gestionar tu decisión de manera rápida y sencilla, solo haz clic en el siguiente botón:
+            <br><br>
+              <a href="mailto:servicioalasociado@coopebanacio.fi.cr?subject=Capitalización%20de%20utilidades%20de%20Cesantía&body=Deseo%20capitalizar%20el%20siguiente%20monto%20de%20lo%20que%20me%20corresponde%20de%20utilidades%20de%20cesantía.%0A%0AMuchas%20gracias." style="background:#0080FF; color:#fff; font-weight:700; padding:12px 32px; border-radius:24px; font-size:1.08rem; text-decoration:none; display:inline-block; box-shadow:0 2px 8px rgba(0,128,255,0.10); margin-top:8px;">Solicitar capitalización</a>
+        </div>
+        <div class="extra" style="color:#555555;">
+            Agradecemos tu confianza y compromiso con Coopebanacio.<br>
+            <span style="display:block; margin-top:8px; color:#2F2F77; font-weight:500;">¡Sigamos construyendo juntos bienestar y seguridad para el futuro!</span>
+        </div>
+        <!-- Pie de página -->
+        <div class="footer">
+            Con nosotros, podés crecer con la confianza de estar respaldado por una cooperativa sólida y comprometida con tu bienestar.<br>
+            <div class="social" style="margin-top:22px;">
+                <!-- Web -->
+                <a href="https://www.coopebanacio.fi.cr" target="_blank" class="icon" title="Sitio Web" style="margin:0 10px; vertical-align:middle;">
+                    <img src="./img/icons/web.svg" alt="Web" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/Coopebanaciorl/" target="_blank" class="icon" title="Facebook" style="margin:0 10px; vertical-align:middle;">
+                    <img src="./img/icons/faceboook.svg" alt="Facebook" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@coopebanaciorl2544" target="_blank" class="icon" title="YouTube" style="margin:0 10px; vertical-align:middle;">
+                    <img src="./img/icons/Youtube.svg" alt="YouTube" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/coopebanaciorl/" target="_blank" class="icon" title="Instagram" style="margin:0 10px; vertical-align:middle;">
+                    <img src="./img/icons/instagram.svg" alt="Instagram" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://cr.linkedin.com/company/coopebanacio-rl" target="_blank" class="icon" title="LinkedIn" style="margin:0 10px; vertical-align:middle;">
+                    <img src="./img/icons/linkedin.svg" alt="LinkedIn" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
