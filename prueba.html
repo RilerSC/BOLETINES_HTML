@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Utilidades de Cesantía - Coopebanacio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Webfonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#0B82FF;
+      --brand-2:#5E8BFF;
+      --brand-3:#2F2F77;
+      --ink:#0d1224;
+      --muted:#5b6785;
+      --bg:#f3f6ff;
+      --white:#fff;
+      --radius:20px;
+      --radius-sm:14px;
+      --shadow:0 20px 50px rgba(11,130,255,.18), 0 10px 30px rgba(13,18,36,.12);
+      --soft:0 12px 30px rgba(13,18,36,.10);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1020;
+        --ink:#e6ebff;
+        --muted:#b8c2e9;
+      }
+      body{ background: radial-gradient(1200px 600px at 80% -20%, rgba(11,130,255,.14), transparent 60%), #0b1020; }
+    }
+
+    /* Reset breve */
+    html,body{margin:0;padding:0}
+    img{border:0;display:block}
+    a{text-decoration:none}
+
+    body{
+      background:
+        radial-gradient(1200px 700px at 100% -20%, rgba(11,130,255,.12), transparent 55%),
+        radial-gradient(900px 520px at -10% -10%, rgba(47,47,119,.10), transparent 60%),
+        var(--bg);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .wrap{
+      max-width:860px; margin:28px auto 48px; padding:0 16px;
+    }
+
+    /* CARD principal */
+    .card{
+      border-radius:24px;
+      background: var(--white);
+      overflow:hidden;
+      box-shadow: var(--soft);
+    }
+
+    /* Header con logo centrado */
+    .header{
+      padding:18px 24px 0; text-align:center;
+      background: linear-gradient(180deg, rgba(11,130,255,.06), transparent);
+    }
+    .logo{ height:54px; width:auto; margin:0 auto 10px; filter:drop-shadow(0 6px 16px rgba(0,0,0,.10)); }
+
+    /* HERO con foto + “píldoras” superpuestas */
+    .hero{
+      position:relative; overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.38)),
+  url("./img/cesantia.png") center/cover no-repeat;
+      aspect-ratio: 16/9; max-height:520px; min-height:340px;
+    }
+    .pill-stack{
+      position:absolute; left:50%; top:50%;
+      transform:translate(-50%,-50%);
+      width:min(92%,760px);
+      display:flex; flex-direction:column; gap:12px; align-items:center;
+    }
+    .pill{
+      color:#fff; font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight:800; letter-spacing:.4px; text-align:center;
+      padding:14px 22px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow);
+      text-transform:uppercase;
+      white-space:normal;
+    }
+    .pill.big{ font-size:clamp(18px, 2.8vw, 28px); }
+    .pill.small{ font-size:clamp(12px, 2vw, 16px); opacity:.95; }
+
+    /* CONTENIDO */
+    .section{ padding:32px clamp(22px,4vw,44px) 26px; }
+
+    .title{
+      font-family:'Poppins',system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      text-align:center; color:var(--brand-3);
+      font-weight:800; letter-spacing:.2px; margin:2px 0 12px;
+      font-size:clamp(18px,2.4vw,22px);
+    }
+    .lead{
+  text-align:center; color:#3a4a6b; font-weight:500;
+  font-size:clamp(15px,2.2vw,17px); line-height:1.7;
+  margin:0 auto; max-width:62ch;
+    }
+
+    .amount{
+  margin:22px auto 6px; display:flex; align-items:center; gap:12px; justify-content:center;
+      padding:12px 18px; border-radius:14px;
+      background: linear-gradient(180deg, #313781, #3e49a8);
+      color:#fff; font-weight:800; letter-spacing:.2px;
+      box-shadow: 0 10px 24px rgba(49,55,129,.28);
+      font-size:clamp(14px,2.2vw,16px);
+    }
+
+    /* Opciones estilo “cards” */
+    .options{
+      display:grid; gap:16px; grid-template-columns:1fr 1fr; margin:24px auto 8px; max-width:760px;
+    }
+    .opt{
+      background: linear-gradient(180deg, #ffffff, #f7faff);
+      border:1px solid rgba(11,130,255,.12);
+      border-radius:16px; padding:16px 18px;
+      display:flex; gap:14px; align-items:flex-start;
+      box-shadow:0 10px 26px rgba(13,18,36,.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .opt:hover{ transform: translateY(-2px); box-shadow:0 18px 36px rgba(11,130,255,.18); }
+    .dot{
+      width:12px; height:12px; border-radius:999px; margin-top:6px; flex:0 0 auto;
+      background: radial-gradient(circle at 30% 30%, #fff, #fff 20%, transparent 21%), linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow:0 0 0 8px rgba(11,130,255,.10);
+    }
+    .opt p{ margin:0; color:#23314e; font-size:15px; line-height:1.6; }
+    .opt b{ color:#0b2050; }
+
+    /* CTA */
+    .cta{ text-align:center; margin:26px 0 8px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:15px 28px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color:#fff; font-weight:800; letter-spacing:.3px;
+      box-shadow: var(--shadow);
+      transform: translateZ(0);
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .btn:hover{ transform: translateY(-2px); filter: brightness(1.06) saturate(1.1); }
+    .btn svg{ width:18px; height:18px; }
+
+    /* Separador suave */
+    .divider{
+      height:22px; background:
+        radial-gradient(110% 120% at 80% 0%, rgba(11,130,255,.10), transparent 40%),
+        #fff;
+    }
+
+    /* Footer */
+    .footer{
+      background:
+        radial-gradient(120% 120% at 85% 0%, rgba(11,130,255,.18), transparent 40%),
+        linear-gradient(180deg, #0c2a69, #0b218b 50%, #0b218b 100%);
+      color:#fff; text-align:center; padding:30px clamp(18px,4vw,28px);
+    }
+    .foot-text{ max-width:70ch; margin:0 auto; line-height:1.7; opacity:.95; }
+
+    .social{
+      margin:18px auto 0; display:flex; gap:16px; justify-content:center; align-items:center;
+    }
+    .social a{
+      width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center;
+      border-radius:999px; background: rgba(255,255,255,.12);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.25), 0 8px 20px rgba(0,0,0,.25);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .social a:hover{ transform: translateY(-2px); background: rgba(255,255,255,.18); }
+    .social img{ width:20px; height:20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,.2)); }
+
+    .foot-mini{ margin-top:16px; font-size:12px; opacity:.75; }
+
+    /* Responsive */
+    @media (max-width: 760px){
+      .hero{ aspect-ratio: 16/10; }
+      .options{ grid-template-columns:1fr; }
+      .pill-stack{ width:94%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <!-- Header -->
+      <div class="header">
+  <img class="logo" src="./LOGOS/logoCop2.png" alt="Coopebanacio">
+      </div>
+
+      <!-- Hero con píldoras -->
+      <div class="hero">
+        <div class="pill-stack">
+          <div class="pill big">LLEGARON LAS UTILIDADES DE CESANTÍA</div>
+          <div class="pill small">¡CAPITALIZALAS ANTES DEL 17 DE SETIEMBRE!</div>
+        </div>
+      </div>
+
+      <!-- Contenido -->
+      <section class="section">
+        <div class="title">Estimado(a) <span style="color:var(--brand-3);">[Nombre]</span></div>
+        <p class="lead">
+          Nos complace informarte que ya se encuentran disponibles tus utilidades de cesantía correspondientes a este año.
+        </p>
+
+  <div class="amount">El valor asignado para ti es de: <span style="margin-left:8px;">$[monto]</span></div>
+
+        <div class="options">
+          <div class="opt">
+            <span class="dot"></span>
+            <p>Solicitar la <b>capitalización total</b> de tus excedentes.</p>
+          </div>
+          <div class="opt">
+            <span class="dot"></span>
+            <p>Solicitar la <b>capitalización parcial</b>, manteniendo una parte disponible.</p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="mailto:servicioalasociado@coopebanacio.fi.cr?subject=Capitalizaci%C3%B3n%20de%20utilidades%20de%20Cesant%C3%ADa&body=Deseo%20capitalizar%20el%20siguiente%20monto%20de%20lo%20que%20me%20corresponde%20de%20utilidades%20de%20cesant%C3%ADa.%0A%0AMuchas%20gracias.">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 12l18-9-5 18-4-7-9-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+            Solicitar capitalización
+          </a>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="foot-text">Con nosotros, podés crecer con la confianza de estar respaldado por una cooperativa sólida y comprometida con tu bienestar.</p>
+        <div class="social">
+          <a href="https://www.coopebanacio.fi.cr" target="_blank" title="Sitio Web">
+            <img src="./img/icons/web.svg" alt="Web" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+          </a>
+          <a href="https://www.facebook.com/Coopebanaciorl/" target="_blank" title="Facebook">
+            <img src="./img/icons/faceboook.svg" alt="Facebook" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+          </a>
+          <a href="https://www.youtube.com/@coopebanaciorl2544" target="_blank" title="YouTube">
+            <img src="./img/icons/Youtube.svg" alt="YouTube" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+          </a>
+          <a href="https://www.instagram.com/coopebanaciorl/" target="_blank" title="Instagram">
+            <img src="./img/icons/instagram.svg" alt="Instagram" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+          </a>
+          <a href="https://cr.linkedin.com/company/coopebanacio-rl" target="_blank" title="LinkedIn">
+            <img src="./img/icons/linkedin.svg" alt="LinkedIn" style="width:28px; height:28px; display:inline-block; filter:invert(1) brightness(2);" />
+          </a>
+        </div>
+        <div class="foot-mini">Si no deseas recibir estos correos, podés darte de baja desde tu perfil o respondiendo a este mensaje.</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
